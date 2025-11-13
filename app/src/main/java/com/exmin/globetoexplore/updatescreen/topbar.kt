@@ -1,6 +1,7 @@
 package com.exmin.globetoexplore.updatescreen
 
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -24,6 +25,7 @@ fun TopBar() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
+            .background(Color(0xFFFFDEAD))
             .padding(horizontal = 8.dp, vertical = 8.dp)
     ) {
         Column {

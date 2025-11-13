@@ -16,19 +16,28 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import com.exmin.globetoexplore.R
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.navigation.NavHostController
+import com.exmin.globetoexplore.Navigation.Routes
+import kotlinx.coroutines.delay
+
 @Composable
-@Preview(showSystemUi = true)
-fun SplashScreen() {
+fun SplashScreen(navHostController: NavHostController) {
+    LaunchedEffect(Unit) {
+        delay(1000)
+        navHostController.navigate(Routes.WelcomeScreen){
+            popUpTo<Routes.representation>{inclusive=true}
+        }
+    }
     Box(modifier = Modifier.fillMaxSize().background(Color(0xFFFFDEAD))) {
         Image(
             painter = painterResource(id = R.drawable.logo),

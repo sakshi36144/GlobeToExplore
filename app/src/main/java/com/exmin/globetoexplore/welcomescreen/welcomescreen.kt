@@ -29,10 +29,11 @@ import com.exmin.globetoexplore.R
 import java.nio.file.WatchEvent
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import com.exmin.globetoexplore.Navigation.Routes
 
 @Composable
-@Preview(showSystemUi = true)
-fun welcomescreen(){
+fun welcomescreen(navHostController: NavHostController){
     Box(modifier = Modifier.fillMaxSize().background(Color(0xFFFFDEAD))) {
     Column (modifier =Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
         Image(painter = painterResource(R.drawable.logo), contentDescription = null,
@@ -53,7 +54,7 @@ Row {
             Text(text = "Team of Services", color = colorResource(R.color.maroon))
         }
         Spacer(modifier = Modifier.height(20.dp))
-        Button(onClick ={TODO()},
+        Button(onClick ={navHostController.navigate(Routes.UserRegistrationScreen)},
             modifier = Modifier.size(280.dp,43.dp),
             shape = RoundedCornerShape(8.dp),
             colors = ButtonDefaults.buttonColors(containerColor =colorResource(R.color.maroon))){

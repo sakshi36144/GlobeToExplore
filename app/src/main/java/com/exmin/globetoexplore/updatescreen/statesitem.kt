@@ -74,7 +74,7 @@ fun statusItem(statusdata: statusdata){
             )
         Spacer(modifier =Modifier.width(12.dp))
         Column {
-            Text(text=statusdata.time, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+            Text(text=statusdata.name, fontSize = 16.sp, fontWeight = FontWeight.Bold)
             Text(text=statusdata.time, fontSize=14.sp,color=Color.Gray)
         }
     }
